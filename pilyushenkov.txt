@@ -1,0 +1,25 @@
+a=input("ведите число ")
+n=int(input("из какой "))
+n1=int(input("в какую сс "))
+
+s=""
+al="ABSDEFGHIKLMNOP"
+power=1
+ans=0
+
+for i in a[::-1]:
+    if i<'A':
+        ans+=int(i)*power
+    else:
+        ans+=(ord(i)-ord('A')+10)*power
+    power*=n
+
+while ans>0:
+    c= ans%n1
+    if c < 10:
+        s=str(c)+s
+    else:
+        s=al[c-25]+s
+    ans//=n1
+print(s, "в", n1,"-ной системе")
+
